@@ -56,6 +56,7 @@ module Ipapi
     end
 
     {% for field, description in FIELDS %}
+      # Retrive {{description.id}} for an IP address
       def {{field.id}}(ip_address : String) : String
         url = "#{API_URL}#{ip_address}/{{field.id}}"
         url = url + "?key=#{@api_key}" if @api_key
@@ -65,6 +66,7 @@ module Ipapi
         parse_field_response(response)
       end
 
+      # Retrive {{description.id}}
       def {{field.id}} : String
         url = "#{API_URL}{{field.id}}"
         url = url + "?key=#{@api_key}" if @api_key
