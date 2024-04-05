@@ -45,7 +45,7 @@ location.in_eu                # false
 location.postal               # "95843"
 location.latitude             # 38.7169
 location.longitude            # -121.3677
-location.timezone                      # "America/Los_Angeles"
+location.timezone             # "America/Los_Angeles"
 location.utc_offset           # "-0700"
 location.country_calling_code # "+1"
 location.currency             # "USD"
