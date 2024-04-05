@@ -7,6 +7,28 @@ require "json"
 module Ipapi
   VERSION = {{ `shards version #{__DIR__}`.chomp.stringify }}
 
+  FIELDS = [
+    "ip",
+    "city",
+    "region",
+    "region_code",
+    "country",
+    "country_name",
+    "continent_code",
+    "in_eu",
+    "postal",
+    "latitude",
+    "longitude",
+    "latlong",
+    "timezone",
+    "utc_offset",
+    "languages",
+    "country_calling_code",
+    "currency",
+    "asn",
+    "org",
+  ]
+
   class Client
     API_URL = "https://ipapi.co/"
 
@@ -32,6 +54,24 @@ module Ipapi
 
       parse_locate_response(response)
     end
+
+    {% for field in FIELDS %}
+      def {{field.id}}(ip_address : String) : String
+        url = "#{API_URL}#{ip_address}/{{field.id}}"
+        url = url + "?key=#{@api_key}" if @api_key
+
+        response = HTTP::Client.get(url)
+        response.body
+      end
+
+      def {{field.id}} : String
+        url = "#{API_URL}{{field.id}}"
+        url = url + "?key=#{@api_key}" if @api_key
+
+        response = HTTP::Client.get(url)
+        response.body
+      end
+    {% end %}
 
     private def parse_locate_response(response : HTTP::Client::Response) : Location?
       case response.status_code
