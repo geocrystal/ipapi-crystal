@@ -7,6 +7,8 @@ require "json"
 module Ipapi
   VERSION = {{ `shards version #{__DIR__}`.chomp.stringify }}
 
+  API_URL = "https://ipapi.co/"
+
   FIELDS = {
     "ip"                   => "public (external) IP address (same as URL `ip`)",
     "city"                 => "city name",
@@ -30,8 +32,6 @@ module Ipapi
   }
 
   class Client
-    API_URL = "https://ipapi.co/"
-
     def initialize(@api_key : String? = nil)
     end
 
