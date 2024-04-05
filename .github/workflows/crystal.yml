@@ -18,10 +18,18 @@ jobs:
         run: crystal tool format --check
 
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest }
+          - { os: windows-latest }
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: ${{ matrix.crystal }}
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Install dependencies
