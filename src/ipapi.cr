@@ -122,40 +122,40 @@ module Ipapi
   class Location
     include JSON::Serializable
 
-    property ip : String
-    property network : String
-    property version : String
-    property city : String
-    property region : String
-    property region_code : String
-    property country : String
-    property country_name : String
-    property country_code : String
-    property country_code_iso3 : String
-    property country_capital : String
-    property country_tld : String
-    property continent_code : String
-    property in_eu : Bool
-    property postal : String
-    property latitude : Float64
-    property longitude : Float64
-    property timezone : String
-    property utc_offset : String
-    property country_calling_code : String
-    property currency : String
-    property currency_name : String
-    property languages : String
-    property country_area : Float64
-    property country_population : Int32
-    property asn : String
-    property org : String
+    getter ip : String
+    getter network : String
+    getter version : String
+    getter city : String
+    getter region : String
+    getter region_code : String
+    getter country : String
+    getter country_name : String
+    getter country_code : String
+    getter country_code_iso3 : String
+    getter country_capital : String
+    getter country_tld : String
+    getter continent_code : String
+    getter in_eu : Bool
+    getter postal : String
+    getter latitude : Float64
+    getter longitude : Float64
+    getter timezone : String
+    getter utc_offset : String
+    getter country_calling_code : String
+    getter currency : String
+    getter currency_name : String
+    getter languages : String
+    getter country_area : Float64
+    getter country_population : Int32
+    getter asn : String
+    getter org : String
   end
 
   class ErrorResponse
     include JSON::Serializable
 
-    property ip : String
-    property error : Bool
-    property reason : String
+    getter ip : String
+    getter error : Bool
+    getter reason : String
   end
 end
