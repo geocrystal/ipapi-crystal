@@ -2,6 +2,7 @@
 
 [![Crystal CI](https://github.com/geocrystal/ipapi-crystal/actions/workflows/crystal.yml/badge.svg)](https://github.com/geocrystal/ipapi-crystal/actions/workflows/crystal.yml)
 [![GitHub release](https://img.shields.io/github/release/geocrystal/ipapi-crystal.svg)](https://github.com/geocrystal/ipapi-crystal/releases)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://geocrystal.github.io/ipapi-crystal/)
 [![License](https://img.shields.io/github/license/geocrystal/ipapi-crystal.svg)](https://github.com/geocrystal/ipapi-crystal/blob/main/LICENSE)
 
 Crystal bindings for <https://ipapi.co> (IP Address Location & Geolocation API)
