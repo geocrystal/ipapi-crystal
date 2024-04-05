@@ -38,7 +38,7 @@ module Ipapi
     # Retrive the location of a specific IP address.
     # If `ip_address` is `nil`, use the client's IP.
     def locate(ip_address : String? = nil) : Location?
-      url = Path.new([API_URL, ip_address, "json"].compact).to_s
+      url = Path.posix([API_URL, ip_address, "json"].compact).to_s
       url = url + "?key=#{@api_key}" if @api_key
 
       response = HTTP::Client.get(url)
@@ -50,7 +50,7 @@ module Ipapi
       # Retrive {{description.id}} of a specific IP address.
       # If `ip_address` is `nil`, use the client's IP.
       def {{field.id}}(ip_address : String? = nil) : String
-        url = Path.new([API_URL, ip_address, "{{field.id}}"].compact).to_s
+        url = Path.posix([API_URL, ip_address, "{{field.id}}"].compact).to_s
 
         url = url + "?key=#{@api_key}" if @api_key
 
