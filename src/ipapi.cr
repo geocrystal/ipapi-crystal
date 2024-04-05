@@ -61,7 +61,8 @@ module Ipapi
         url = url + "?key=#{@api_key}" if @api_key
 
         response = HTTP::Client.get(url)
-        response.body
+
+        parse_field_response(response)
       end
 
       def {{field.id}} : String
@@ -69,7 +70,8 @@ module Ipapi
         url = url + "?key=#{@api_key}" if @api_key
 
         response = HTTP::Client.get(url)
-        response.body
+
+        parse_field_response(response)
       end
     {% end %}
 
@@ -83,6 +85,21 @@ module Ipapi
         end
 
         Location.from_json(response.body)
+      when 403
+        raise AuthorizationFailedException.new
+      when 404
+        raise PageNotFoundException.new
+      when 429
+        raise RateLimitedException.new
+      else
+        raise Error.new(response.body)
+      end
+    end
+
+    private def parse_field_response(response : HTTP::Client::Response) : String
+      case response.status_code
+      when 200
+        response.body
       when 403
         raise AuthorizationFailedException.new
       when 404
