@@ -9,13 +9,20 @@ module Ipapi
 
   API_URL = "https://ipapi.co/"
 
+  # https://ipapi.co/api/#specific-location-field
   FIELDS = {
     "ip"                   => "public (external) IP address (same as URL `ip`)",
     "city"                 => "city name",
     "region"               => "region name (administrative division)",
     "region_code"          => "region code",
     "country"              => "country code (2 letter, ISO 3166-1 alpha-2)",
+    "country_code"         => "country code (2 letter, ISO 3166-1 alpha-2)",
+    "country_code_iso3"    => "country code (3 letter, ISO 3166-1 alpha-3)",
     "country_name"         => "short country name",
+    "country_capital"      => "capital of the country",
+    "country_tld"          => "country specific TLD (top-level domain)",
+    "country_area"         => "area of the country (in sq km)",
+    "country_population"   => "population of the country",
     "continent_code"       => "country code (2 letter, ISO 3166-1 alpha-2)",
     "in_eu"                => "whether IP address belongs to a country that is a member of the European Union (EU)",
     "postal"               => "postal code / zip code",
@@ -24,9 +31,10 @@ module Ipapi
     "latlong"              => "comma separated latitude and longitude",
     "timezone"             => "timezone (IANA format i.e. “Area/Location”)",
     "utc_offset"           => "UTC offset (with daylight saving time) as `+HHMM` or `-HHMM` (`HH` is hours, `MM` is minutes)",
-    "languages"            => "languages spoken (comma separated 2 or 3 letter ISO 639 code with optional hyphen separated country suffix)",
     "country_calling_code" => "country calling code (dial in code, comma separated)",
     "currency"             => "currency code (ISO 4217)",
+    "currency_name"        => "currency name",
+    "languages"            => "languages spoken (comma separated 2 or 3 letter ISO 639 code with optional hyphen separated country suffix)",
     "asn"                  => "autonomous system number",
     "org"                  => "organization name",
   }
