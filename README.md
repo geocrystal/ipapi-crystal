@@ -1,5 +1,9 @@
 # ipapi-crystal
 
+[![Crystal CI](https://github.com/geocrystal/ipapi-crystal/actions/workflows/crystal.yml/badge.svg)](https://github.com/geocrystal/ipapi-crystal/actions/workflows/crystal.yml)
+[![GitHub release](https://img.shields.io/github/release/geocrystal/ipapi-crystal.svg)](https://github.com/geocrystal/ipapi-crystal/releases)
+[![License](https://img.shields.io/github/license/geocrystal/ipapi-crystal.svg)](https://github.com/geocrystal/ipapi-crystal/blob/main/LICENSE)
+
 Crystal bindings for <https://ipapi.co> (IP Address Location & Geolocation API)
 
 ## Installation
