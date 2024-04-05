@@ -35,19 +35,10 @@ module Ipapi
     def initialize(@api_key : String? = nil)
     end
 
-    # Location of a specific IP
-    def locate(ip_address : String) : Location?
-      url = "#{API_URL}#{ip_address}/json"
-      url = url + "?key=#{@api_key}" if @api_key
-
-      response = HTTP::Client.get(url)
-
-      parse_locate_response(response)
-    end
-
-    # Location of client’s IP
-    def locate : Location?
-      url = "#{API_URL}json"
+    # Retrive the location of a specific IP address.
+    # If `ip_address` is `nil`, use the client's IP.
+    def locate(ip_address : String? = nil) : Location?
+      url = Path.new([API_URL, ip_address, "json"].compact).to_s
       url = url + "?key=#{@api_key}" if @api_key
 
       response = HTTP::Client.get(url)
@@ -56,19 +47,11 @@ module Ipapi
     end
 
     {% for field, description in FIELDS %}
-      # Retrive {{description.id}} for an IP address
-      def {{field.id}}(ip_address : String) : String
-        url = "#{API_URL}#{ip_address}/{{field.id}}"
-        url = url + "?key=#{@api_key}" if @api_key
+      # Retrive {{description.id}} of a specific IP address.
+      # If `ip_address` is `nil`, use the client's IP.
+      def {{field.id}}(ip_address : String? = nil) : String
+        url = Path.new([API_URL, ip_address, "{{field.id}}"].compact).to_s
 
-        response = HTTP::Client.get(url)
-
-        parse_field_response(response)
-      end
-
-      # Retrive {{description.id}}
-      def {{field.id}} : String
-        url = "#{API_URL}{{field.id}}"
         url = url + "?key=#{@api_key}" if @api_key
 
         response = HTTP::Client.get(url)
