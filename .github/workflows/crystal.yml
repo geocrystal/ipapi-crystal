@@ -1,0 +1,30 @@
+name: Crystal CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  check_format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Check format
+        run: crystal tool format --check
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: shards install
+      - name: Run tests
+        run: crystal spec
