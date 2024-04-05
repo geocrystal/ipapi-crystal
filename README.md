@@ -26,8 +26,7 @@ require "ipapi"
 client = Ipapi::Client.new
 
 location = client.locate("50.1.2.3")
-# => #<Ipapi::Location:0x7b45cdce5b40 @ip="50.1.2.3", @network="50.1.0.0/21", @version="IPv4", @city="Antelope", @region="California", @region_code="CA", @country="US", @country_name="United States", @country_code="US", @country_code_iso3="USA", @country_capital="Washington", @country_tld=".us", @continent_code="NA", @in_eu=false, @postal="95843", @latitude=38.7169, @longitude=-121.3677, @timezone="America/Los_Angeles", @utc_offset="-0700", @country_calling_code="+1", @currency="USD", @currency_name="Dollar", @languages="en-US,es-US
-,haw,fr", @country_area=9629091.0, @country_population=327167434, @asn="AS7065", @org="SNIC">
+# => #<Ipapi::Location:0x7b45cdce5b40 @ip="50.1.2.3", @network="50.1.0.0/21", @version="IPv4", @city="Antelope", @region="California", @region_code="CA", @country="US", @country_name="United States", @country_code="US", @country_code_iso3="USA", @country_capital="Washington", @country_tld=".us", @continent_code="NA", @in_eu=false, @postal="95843", @latitude=38.7169, @longitude=-121.3677, @timezone="America/Los_Angeles", @utc_offset="-0700", @country_calling_code="+1", @currency="USD", @currency_name="Dollar", @languages="en-US,es-US,haw,fr", @country_area=9629091.0, @country_population=327167434, @asn="AS7065", @org="SNIC">
 
 location.ip                   # "50.1.2.3"
 location.network              # "50.1.0.0/21"
