@@ -7,27 +7,27 @@ require "json"
 module Ipapi
   VERSION = {{ `shards version #{__DIR__}`.chomp.stringify }}
 
-  FIELDS = [
-    "ip",
-    "city",
-    "region",
-    "region_code",
-    "country",
-    "country_name",
-    "continent_code",
-    "in_eu",
-    "postal",
-    "latitude",
-    "longitude",
-    "latlong",
-    "timezone",
-    "utc_offset",
-    "languages",
-    "country_calling_code",
-    "currency",
-    "asn",
-    "org",
-  ]
+  FIELDS = {
+    "ip"                   => "public (external) IP address (same as URL `ip`)",
+    "city"                 => "city name",
+    "region"               => "region name (administrative division)",
+    "region_code"          => "region code",
+    "country"              => "country code (2 letter, ISO 3166-1 alpha-2)",
+    "country_name"         => "short country name",
+    "continent_code"       => "country code (2 letter, ISO 3166-1 alpha-2)",
+    "in_eu"                => "whether IP address belongs to a country that is a member of the European Union (EU)",
+    "postal"               => "postal code / zip code",
+    "latitude"             => "latitude",
+    "longitude"            => "longitude",
+    "latlong"              => "comma separated latitude and longitude",
+    "timezone"             => "timezone (IANA format i.e. “Area/Location”)",
+    "utc_offset"           => "UTC offset (with daylight saving time) as `+HHMM` or `-HHMM` (`HH` is hours, `MM` is minutes)",
+    "languages"            => "languages spoken (comma separated 2 or 3 letter ISO 639 code with optional hyphen separated country suffix)",
+    "country_calling_code" => "country calling code (dial in code, comma separated)",
+    "currency"             => "currency code (ISO 4217)",
+    "asn"                  => "autonomous system number",
+    "org"                  => "organization name",
+  }
 
   class Client
     API_URL = "https://ipapi.co/"
@@ -55,7 +55,7 @@ module Ipapi
       parse_locate_response(response)
     end
 
-    {% for field in FIELDS %}
+    {% for field, description in FIELDS %}
       def {{field.id}}(ip_address : String) : String
         url = "#{API_URL}#{ip_address}/{{field.id}}"
         url = url + "?key=#{@api_key}" if @api_key
