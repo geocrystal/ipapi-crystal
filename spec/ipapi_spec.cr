@@ -7,7 +7,7 @@ describe Ipapi do
     location = client.locate("50.1.2.3")
 
     location.ip.should eq("50.1.2.3")
-    location.city.should eq("Antelope")
+    location.city.should eq("Davis")
     location.region.should eq("California")
     location.country.should eq("US")
   end
@@ -15,6 +15,6 @@ describe Ipapi do
   it "#latlong" do
     latlong = client.latlong("50.1.2.3")
 
-    latlong.should eq("38.716900,-121.367700")
+    latlong.should eq("38.544200,-121.725200")
   end
 end
