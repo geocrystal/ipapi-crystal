@@ -26,13 +26,13 @@ require "ipapi"
 
 client = Ipapi::Client.new
 
-location = client.locate("50.1.2.3")
-# => #<Ipapi::Location:0x7b45cdce5b40 @ip="50.1.2.3", @network="50.1.0.0/21", @version="IPv4", @city="Antelope", @region="California", @region_code="CA", @country="US", @country_name="United States", @country_code="US", @country_code_iso3="USA", @country_capital="Washington", @country_tld=".us", @continent_code="NA", @in_eu=false, @postal="95843", @latitude=38.7169, @longitude=-121.3677, @timezone="America/Los_Angeles", @utc_offset="-0700", @country_calling_code="+1", @currency="USD", @currency_name="Dollar", @languages="en-US,es-US,haw,fr", @country_area=9629091.0, @country_population=327167434, @asn="AS7065", @org="SNIC">
+location = client.locate("8.8.8.8")
+# => #<Ipapi::Location:0x780aff839b40 @ip="8.8.8.8", @network="8.8.8.0/24", @version="IPv4", @city="Mountain View", @region="California", @region_code="CA", @country="US", @country_name="United States", @country_code="US", @country_code_iso3="USA", @country_capital="Washington", @country_tld=".us", @continent_code="NA", @in_eu=false, @postal="94043", @latitude=37.42301, @longitude=-122.083352, @timezone="America/Los_Angeles", @utc_offset="-0700", @country_calling_code="+1", @currency="USD", @currency_name="Dollar", @languages="en-US,es-US,haw,fr", @country_area=9629091.0, @country_population=327167434, @asn="AS15169", @org="GOOGLE">
 
-location.ip                   # "50.1.2.3"
-location.network              # "50.1.0.0/21"
+location.ip                   # "8.8.8.8"
+location.network              # "8.8.8.0/24"
 location.version              # "IPv4"
-location.city                 # "Antelope"
+location.city                 # "Mountain View"
 location.region               # "California"
 location.region_code          # "CA"
 location.country              # "US"
@@ -44,8 +44,8 @@ location.country_tld          # ".us"
 location.continent_code       # "NA"
 location.in_eu                # false
 location.postal               # "95843"
-location.latitude             # 38.7169
-location.longitude            # -121.3677
+location.latitude             # 37.42301
+location.longitude            # -122.083352
 location.timezone             # "America/Los_Angeles"
 location.utc_offset           # "-0700"
 location.country_calling_code # "+1"
