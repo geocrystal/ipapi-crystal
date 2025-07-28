@@ -10,6 +10,7 @@ describe Ipapi do
     location.city.should eq("Mountain View")
     location.region.should eq("California")
     location.country.should eq("US")
+    location.to_json.should be_a(String)
   end
 
   it "#latlong" do
