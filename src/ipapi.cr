@@ -144,7 +144,7 @@ module Ipapi
     getter country_tld : String
     getter continent_code : String
     getter in_eu : Bool
-    getter postal : String
+    getter postal : String?
     getter latitude : Float64
     getter longitude : Float64
     getter timezone : String
