@@ -134,8 +134,8 @@ module Ipapi
     getter network : String
     getter version : String
     getter city : String
-    getter region : String
-    getter region_code : String
+    getter region : String?
+    getter region_code : String?
     getter country : String
     getter country_name : String
     getter country_code : String
