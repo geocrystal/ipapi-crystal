@@ -55,10 +55,10 @@ module Ipapi
     end
 
     {% for field, description in FIELDS %}
-      # Retrive {{description.id}} of a specific IP address.
+      # Retrive {{ description.id }} of a specific IP address.
       # If `ip_address` is `nil`, use the client's IP.
-      def {{field.id}}(ip_address : String? = nil) : String
-        url = Path.posix([API_URL, ip_address, "{{field.id}}"].compact).to_s
+      def {{ field.id }}(ip_address : String? = nil) : String
+        url = Path.posix([API_URL, ip_address, "{{ field.id }}"].compact).to_s
 
         url = url + "?access_key=#{@api_key}" if @api_key
 
