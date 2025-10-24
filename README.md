@@ -42,7 +42,7 @@ location.country_code_iso3    # "USA"
 location.country_capital      # "Washington"
 location.country_tld          # ".us"
 location.continent_code       # "NA"
-location.in_eu                # false
+location.in_eu?               # false
 location.postal               # "95843"
 location.latitude             # 37.42301
 location.longitude            # -122.083352

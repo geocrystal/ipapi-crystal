@@ -143,7 +143,7 @@ module Ipapi
     getter country_capital : String
     getter country_tld : String
     getter continent_code : String
-    getter in_eu : Bool
+    getter? in_eu : Bool
     getter postal : String?
     getter latitude : Float64
     getter longitude : Float64
@@ -163,7 +163,7 @@ module Ipapi
     include JSON::Serializable
 
     getter ip : String
-    getter error : Bool
+    getter? error : Bool
     getter reason : String
   end
 end
