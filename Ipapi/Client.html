@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.17.1">
+<meta name="crystal_docs.project_version" content="0.7.0">
+<meta name="crystal_docs.project_name" content="ipapi">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ipapi">
+  <title>Ipapi::Client - ipapi 0.7.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ipapi
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.7.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="ipapi/Ipapi" data-name="ipapi">
+      <a href="../Ipapi.html">Ipapi</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ipapi/Ipapi/AuthorizationFailedException" data-name="ipapi::authorizationfailedexception">
+      <a href="../Ipapi/AuthorizationFailedException.html">AuthorizationFailedException</a>
+      
+    </li>
+  
+  <li class=" current" data-id="ipapi/Ipapi/Client" data-name="ipapi::client">
+      <a href="../Ipapi/Client.html">Client</a>
+      
+    </li>
+  
+  <li class=" " data-id="ipapi/Ipapi/Error" data-name="ipapi::error">
+      <a href="../Ipapi/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="ipapi/Ipapi/ErrorResponse" data-name="ipapi::errorresponse">
+      <a href="../Ipapi/ErrorResponse.html">ErrorResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="ipapi/Ipapi/Location" data-name="ipapi::location">
+      <a href="../Ipapi/Location.html">Location</a>
+      
+    </li>
+  
+  <li class=" " data-id="ipapi/Ipapi/PageNotFoundException" data-name="ipapi::pagenotfoundexception">
+      <a href="../Ipapi/PageNotFoundException.html">PageNotFoundException</a>
+      
+    </li>
+  
+  <li class=" " data-id="ipapi/Ipapi/RateLimitedException" data-name="ipapi::ratelimitedexception">
+      <a href="../Ipapi/RateLimitedException.html">RateLimitedException</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    class
+  </span> Ipapi::<wbr>Client
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Ipapi/Client.html">Ipapi::Client</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      ipapi.cr
+    
+    <br/>
+  
+
+
+
+
+
+  
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28api_key%3AString%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(api_key : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#asn%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#asn</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive autonomous system number of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#city%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#city</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive city name of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#continent_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#continent_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive country code (2 letter, ISO 3166-1 alpha-2) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive country code (2 letter, ISO 3166-1 alpha-2) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_area%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_area</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive area of the country (in sq km) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_calling_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_calling_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive country calling code (dial in code, comma separated) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_capital%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_capital</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive capital of the country of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive country code (2 letter, ISO 3166-1 alpha-2) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_code_iso3%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_code_iso3</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive country code (3 letter, ISO 3166-1 alpha-3) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_name%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_name</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive short country name of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_population%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_population</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive population of the country of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_tld%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#country_tld</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive country specific TLD (top-level domain) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#currency%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#currency</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive currency code (ISO 4217) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#currency_name%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#currency_name</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive currency name of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#in_eu%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#in_eu</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive whether IP address belongs to a country that is a member of the European Union (EU) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ip%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#ip</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive public (external) IP address (same as URL <code><a href="../Ipapi/Client.html#ip%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#ip</a></code>) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#languages%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#languages</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive languages spoken (comma separated 2 or 3 letter ISO 639 code with optional hyphen separated country suffix) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#latitude%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#latitude</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive latitude of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#latlong%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#latlong</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive comma separated latitude and longitude of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#locate%28ip_address%3AString%7CNil%3Dnil%29%3ALocation%7CNil-instance-method" class="signature"><strong>#locate</strong>(ip_address : String | Nil = <span class="n">nil</span>) : Location | Nil</a>
+        
+          <div class="summary"><p>Retrive the location of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#longitude%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#longitude</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive longitude of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#org%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#org</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive organization name of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#postal%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#postal</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive postal code / zip code of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#region%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#region</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive region name (administrative division) of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#region_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#region_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive region code of a specific IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timezone%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#timezone</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive timezone (IANA format i.e.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#utc_offset%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#utc_offset</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Retrive UTC offset (with daylight saving time) as <code>+HHMM</code> or <code>-HHMM</code> (<code>HH</code> is hours, <code>MM</code> is minutes) of a specific IP address.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(api_key:String|Nil=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(api_key : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28api_key%3AString%7CNil%3Dnil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="asn(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>asn</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#asn%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive autonomous system number of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="city(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>city</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#city%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive city name of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="continent_code(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>continent_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#continent_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive country code (2 letter, ISO 3166-1 alpha-2) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive country code (2 letter, ISO 3166-1 alpha-2) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_area(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_area</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_area%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive area of the country (in sq km) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_calling_code(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_calling_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_calling_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive country calling code (dial in code, comma separated) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_capital(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_capital</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_capital%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive capital of the country of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_code(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive country code (2 letter, ISO 3166-1 alpha-2) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_code_iso3(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_code_iso3</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_code_iso3%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive country code (3 letter, ISO 3166-1 alpha-3) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_name(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_name</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_name%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive short country name of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_population(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_population</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_population%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive population of the country of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_tld(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>country_tld</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#country_tld%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive country specific TLD (top-level domain) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="currency(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>currency</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#currency%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive currency code (ISO 4217) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="currency_name(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>currency_name</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#currency_name%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive currency name of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="in_eu(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>in_eu</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#in_eu%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive whether IP address belongs to a country that is a member of the European Union (EU) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ip(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>ip</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#ip%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive public (external) IP address (same as URL <code><a href="../Ipapi/Client.html#ip%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#ip</a></code>) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="languages(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>languages</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#languages%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive languages spoken (comma separated 2 or 3 letter ISO 639 code with optional hyphen separated country suffix) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="latitude(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>latitude</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#latitude%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive latitude of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="latlong(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>latlong</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#latlong%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive comma separated latitude and longitude of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="locate(ip_address:String|Nil=nil):Location|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>locate</strong>(ip_address : String | Nil = <span class="n">nil</span>) : <a href="../Ipapi/Location.html">Location</a> | Nil
+
+        <a class="method-permalink" href="#locate%28ip_address%3AString%7CNil%3Dnil%29%3ALocation%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive the location of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="longitude(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>longitude</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#longitude%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive longitude of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="org(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>org</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#org%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive organization name of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="postal(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>postal</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#postal%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive postal code / zip code of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="region(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>region</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#region%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive region name (administrative division) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="region_code(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>region_code</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#region_code%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive region code of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timezone(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>timezone</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#timezone%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive timezone (IANA format i.e. “Area/Location”) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="utc_offset(ip_address:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>utc_offset</strong>(ip_address : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#utc_offset%28ip_address%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrive UTC offset (with daylight saving time) as <code>+HHMM</code> or <code>-HHMM</code> (<code>HH</code> is hours, <code>MM</code> is minutes) of a specific IP address.
+If <code>ip_address</code> is <code>nil</code>, use the client's IP.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>
