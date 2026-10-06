@@ -1,5 +1,6 @@
 require "http/client"
 require "json"
+require "uri"
 
 # Crystal bindings for https://ipapi.co (IP Address Location & Geolocation API)
 #
@@ -46,8 +47,7 @@ module Ipapi
     # Retrive the location of a specific IP address.
     # If `ip_address` is `nil`, use the client's IP.
     def locate(ip_address : String? = nil) : Location
-      url = Path.posix([API_URL, ip_address, "json"].compact).to_s
-      url = url + "?access_key=#{@api_key}" if @api_key
+      url = build_url(ip_address, "json")
 
       response = HTTP::Client.get(url)
 
@@ -58,15 +58,24 @@ module Ipapi
       # Retrive {{ description.id }} of a specific IP address.
       # If `ip_address` is `nil`, use the client's IP.
       def {{ field.id }}(ip_address : String? = nil) : String
-        url = Path.posix([API_URL, ip_address, "{{ field.id }}"].compact).to_s
-
-        url = url + "?access_key=#{@api_key}" if @api_key
+        url = build_url(ip_address, "{{ field.id }}")
 
         response = HTTP::Client.get(url)
 
         parse_field_response(response)
       end
     {% end %}
+
+    private def build_url(ip_address : String?, endpoint : String) : URI
+      url = URI.parse(API_URL)
+      url.path = "/#{[ip_address, endpoint].compact.join("/")}"
+
+      if api_key = @api_key
+        url.query = URI::Params.encode({"access_key" => api_key})
+      end
+
+      url
+    end
 
     private def parse_locate_response(response : HTTP::Client::Response) : Location
       case response.status_code
