@@ -74,19 +74,28 @@ module Ipapi
         if JSON.parse(response.body).as_h["error"]? == true
           error_response = ErrorResponse.from_json(response.body)
 
-          raise Error.new(error_response.reason)
+          raise Error.new(error_response.message || error_response.reason)
         end
 
         Location.from_json(response.body)
       when 403
-        raise AuthorizationFailedException.new
+        raise AuthorizationFailedException.new(error_message(response.body))
       when 404
-        raise PageNotFoundException.new
+        raise PageNotFoundException.new(error_message(response.body))
       when 429
-        raise RateLimitedException.new
+        raise RateLimitedException.new(error_message(response.body))
       else
-        raise Error.new(response.body)
+        raise Error.new(error_message(response.body) || response.body)
       end
+    end
+
+    private def error_message(body : String) : String?
+      json = JSON.parse(body).as_h?
+      return unless json
+
+      json["message"]?.try(&.as_s?) || json["reason"]?.try(&.as_s?)
+    rescue JSON::ParseException
+      nil
     end
 
     private def parse_field_response(response : HTTP::Client::Response) : String
@@ -94,13 +103,13 @@ module Ipapi
       when 200
         response.body
       when 403
-        raise AuthorizationFailedException.new
+        raise AuthorizationFailedException.new(error_message(response.body))
       when 404
-        raise PageNotFoundException.new
+        raise PageNotFoundException.new(error_message(response.body))
       when 429
-        raise RateLimitedException.new
+        raise RateLimitedException.new(error_message(response.body))
       else
-        raise Error.new(response.body)
+        raise Error.new(error_message(response.body) || response.body)
       end
     end
   end
@@ -110,20 +119,20 @@ module Ipapi
   end
 
   class AuthorizationFailedException < Error
-    def initialize
-      super "Invalid authorization credentials : HTTP 403"
+    def initialize(message : String? = nil)
+      super(message || "Invalid authorization credentials : HTTP 403")
     end
   end
 
   class PageNotFoundException < Error
-    def initialize
-      super "Request was rate limited : HTTP 429"
+    def initialize(message : String? = nil)
+      super(message || "Page not found : HTTP 404")
     end
   end
 
   class RateLimitedException < Error
-    def initialize
-      super "Request was rate limited : HTTP 429"
+    def initialize(message : String? = nil)
+      super(message || "Request was rate limited : HTTP 429")
     end
   end
 
@@ -165,5 +174,6 @@ module Ipapi
     getter ip : String
     getter? error : Bool
     getter reason : String
+    getter message : String?
   end
 end
