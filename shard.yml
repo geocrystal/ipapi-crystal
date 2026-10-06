@@ -6,4 +6,8 @@ authors:
 
 crystal: '>= 1.0.0'
 
+development_dependencies:
+  vcr:
+    github: spoved/vcr.cr
+
 license: MIT
