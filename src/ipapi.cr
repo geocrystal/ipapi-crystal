@@ -45,7 +45,7 @@ module Ipapi
 
     # Retrive the location of a specific IP address.
     # If `ip_address` is `nil`, use the client's IP.
-    def locate(ip_address : String? = nil) : Location?
+    def locate(ip_address : String? = nil) : Location
       url = Path.posix([API_URL, ip_address, "json"].compact).to_s
       url = url + "?access_key=#{@api_key}" if @api_key
 
@@ -68,7 +68,7 @@ module Ipapi
       end
     {% end %}
 
-    private def parse_locate_response(response : HTTP::Client::Response) : Location?
+    private def parse_locate_response(response : HTTP::Client::Response) : Location
       case response.status_code
       when 200
         if JSON.parse(response.body).as_h["error"]? == true
