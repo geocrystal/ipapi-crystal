@@ -58,6 +58,16 @@ location.asn                  # "AS7065"
 location.org                  # "SNIC"
 ```
 
+## Testing
+
+Run `shards install` and `crystal spec`. HTTP specs use VCR recordings in
+`spec/fixtures/vcr`, so the test suite runs without contacting ipapi.co.
+
+To refresh a recording, delete the corresponding cassette directory and run
+`crystal spec` with network access. Review the recorded response and update
+assertions if needed. VCR can retain `Transfer-Encoding: chunked` when
+saving a decoded body; remove that header from the recording if present.
+
 ## Contributing
 
 1. Fork it (<https://github.com/geocrystal/ipapi-crystal/fork>)
