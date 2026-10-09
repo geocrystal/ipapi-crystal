@@ -174,7 +174,7 @@ module Ipapi
     getter country_area : Float64
     getter country_population : Int32
     getter asn : String?
-    getter org : String
+    getter org : String?
   end
 
   class ErrorResponse
