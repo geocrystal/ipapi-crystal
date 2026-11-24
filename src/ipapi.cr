@@ -149,7 +149,7 @@ module Ipapi
     include JSON::Serializable
 
     getter ip : String
-    getter network : String
+    getter network : String?
     getter version : String
     getter city : String
     getter region : String?
